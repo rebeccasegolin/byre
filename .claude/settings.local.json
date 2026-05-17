@@ -11,7 +11,10 @@
       "PowerShell(Get-Command gh -ErrorAction SilentlyContinue; Get-Item \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" -ErrorAction SilentlyContinue; Get-Item \"$env:LOCALAPPDATA\\\\Programs\\\\GitHub CLI\\\\gh.exe\" -ErrorAction SilentlyContinue)",
       "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth status 2>&1)",
       "PowerShell($tmp = [System.IO.Path]::GetTempFileName\\(\\); Set-Content -Path $tmp -Value '{\"source\":{\"branch\":\"main\",\"path\":\"/\"}}' -Encoding utf8; Get-Content $tmp | & \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" api repos/rebeccasegolin/ruivagarimpeira/pages --method POST --input - 2>&1; Remove-Item $tmp)",
-      "PowerShell($tmp = [System.IO.Path]::GetTempFileName\\(\\) + \".json\"; [System.IO.File]::WriteAllText\\($tmp, '{\"source\":{\"branch\":\"main\",\"path\":\"/\"}}', [System.Text.UTF8Encoding]::new\\($false\\)\\); & \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" api repos/rebeccasegolin/ruivagarimpeira/pages --method POST --input $tmp 2>&1; Remove-Item $tmp)"
+      "PowerShell($tmp = [System.IO.Path]::GetTempFileName\\(\\) + \".json\"; [System.IO.File]::WriteAllText\\($tmp, '{\"source\":{\"branch\":\"main\",\"path\":\"/\"}}', [System.Text.UTF8Encoding]::new\\($false\\)\\); & \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" api repos/rebeccasegolin/ruivagarimpeira/pages --method POST --input $tmp 2>&1; Remove-Item $tmp)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" api repos/rebeccasegolin/ruivagarimpeira/deployments --jq '.[0] | {state: .statuses_url, env: .environment, created: .created_at, sha: .sha}' 2>&1)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" api repos/rebeccasegolin/ruivagarimpeira/pages/builds --jq '.[0] | {status: .status, commit: .commit, error: .error}' 2>&1)",
+      "PowerShell($r = Invoke-WebRequest \"https://rebeccasegolin.github.io/ruivagarimpeira/\" -UseBasicParsing; $r.StatusCode; $r.Content | Select-String \"ruivagarimpeiraescrita\" | Select-Object -First 1)"
     ]
   }
 }
