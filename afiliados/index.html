@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./link.png" type="image/x-icon">
   <title>Ruiva Garimpeira – Links de Afiliada</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -62,68 +62,35 @@
        HERO
     ══════════════════════════════════════════ */
     .hero {
-      display: grid;
-      grid-template-columns: 152px 1fr;
-      gap: 12px;
-      align-items: center;
+      text-align: center;
       margin-bottom: 24px;
     }
 
-    .hero-mascot img {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .hero-content { display: flex; flex-direction: column; }
-
-    .como-voce {
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.65rem;
       color: var(--brown-dark);
-    }
-
-    .pode-nos {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.85rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 1.0;
-      color: var(--brown-dark);
-    }
-
-    .ajudar {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2.3rem;
-      font-weight: 700;
-      color: var(--brown-mid);
       line-height: 1.15;
+      margin-bottom: 6px;
     }
 
-    .badge-gastar {
-      display: inline-block;
-      background: var(--terracotta);
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.54rem;
-      font-weight: 800;
-      letter-spacing: 1.3px;
+    .hero-sub {
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin: 8px 0;
-      white-space: nowrap;
+      color: var(--terracotta);
+      margin-bottom: 14px;
+      opacity: 0.82;
     }
 
     .hero-desc {
-      font-size: 0.72rem;
-      font-weight: 500;
+      font-size: 0.7rem;
+      font-weight: 400;
       color: var(--brown-mid);
       line-height: 1.65;
+      opacity: 0.85;
     }
 
     /* ══════════════════════════════════════════
@@ -150,7 +117,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 2px 12px rgba(197, 106, 69, 0.10);
+      border: 1px solid var(--peach);
     }
 
     .logo-circle {
@@ -267,9 +234,10 @@
     .tips-content { flex: 1; }
 
     .tips-title {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      font-weight: 400;
       color: var(--brown-dark);
       margin-bottom: 5px;
     }
@@ -328,9 +296,10 @@
     .shein-note-icon { font-size: 1.55rem; flex-shrink: 0; line-height: 1; }
 
     .shein-note-title {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.12rem;
-      font-weight: 700;
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.0rem;
+      font-weight: 400;
       color: var(--brown-dark);
       margin-bottom: 5px;
     }
@@ -426,10 +395,6 @@
     }
 
     @media (max-width: 380px) {
-      .hero { grid-template-columns: 126px 1fr; gap: 8px; }
-      .hero-mascot img { width: 122px; height: 122px; }
-      .pode-nos  { font-size: 1.6rem; }
-      .ajudar    { font-size: 2rem; }
       .pname     { font-size: 0.7rem; }
       .platform-info { min-width: 76px; }
     }
@@ -437,44 +402,15 @@
 </head>
 <body>
 
-<div class="sparkles-bg" aria-hidden="true">
-  <span class="sp" style="top:3%;left:7%;font-size:0.75rem;opacity:.55">✦</span>
-  <span class="sp" style="top:2%;left:80%;font-size:0.55rem;opacity:.5">✧</span>
-  <span class="sp" style="top:8%;left:93%;font-size:0.65rem;opacity:.4">✦</span>
-  <span class="sp" style="top:14%;left:2%;font-size:0.5rem;opacity:.45">✧</span>
-  <span class="sp" style="top:21%;left:88%;font-size:0.7rem;opacity:.5">✦</span>
-  <span class="sp" style="top:27%;left:4%;font-size:0.6rem;opacity:.4">✦</span>
-  <span class="sp" style="top:35%;left:92%;font-size:0.5rem;opacity:.45">✧</span>
-  <span class="sp" style="top:43%;left:2%;font-size:0.7rem;opacity:.5">✦</span>
-  <span class="sp" style="top:50%;left:90%;font-size:0.6rem;opacity:.4">✦</span>
-  <span class="sp" style="top:57%;left:6%;font-size:0.55rem;opacity:.5">✧</span>
-  <span class="sp" style="top:65%;left:94%;font-size:0.75rem;opacity:.45">✦</span>
-  <span class="sp" style="top:72%;left:3%;font-size:0.5rem;opacity:.4">✦</span>
-  <span class="sp" style="top:80%;left:86%;font-size:0.65rem;opacity:.5">✧</span>
-  <span class="sp" style="top:88%;left:5%;font-size:0.7rem;opacity:.45">✦</span>
-  <span class="sp" style="top:95%;left:78%;font-size:0.55rem;opacity:.4">✦</span>
-</div>
 
 <div class="page">
 
   <a href="../" class="back-link">← Voltar ao início</a>
 
   <header class="hero">
-    <div class="hero-mascot">
-      <img src="../ruivagarimpeiraimagem-logo.png" alt="Ruiva Garimpeira">
-    </div>
-    <div class="hero-content">
-      <p class="como-voce">Como você</p>
-      <p class="pode-nos">PODE NOS</p>
-      <p class="ajudar">ajudar</p>
-      <div class="badge-gastar">SEM GASTAR NADA A MAIS</div>
-      <p class="hero-desc">
-        Quando você compra pelos meus<br>
-        links de afiliada, eu ganho uma<br>
-        pequena comissão e isso ajuda<br>
-        muito nossa família! ♥
-      </p>
-    </div>
+    <h1 class="hero-title">como você pode nos ajudar</h1>
+    <p class="hero-sub">sem gastar nada a mais por isso ♡</p>
+    <p class="hero-desc">Quando você compra pelos meus links de afiliada, eu ganho uma pequena comissão e isso ajuda muito nossa família! ♥</p>
   </header>
 
   <div class="tips-box">
@@ -486,12 +422,6 @@
         <li>♥ <strong>Acesse meu link de afiliada</strong> (botões abaixo).</li>
         <li>♥ Só então adicione os itens ao carrinho e finalize a compra!</li>
       </ul>
-      <p class="cookie-note">⚠️ Em algumas plataformas o cookie <strong>não funciona</strong> para itens que já estão no carrinho — por isso salva antes e adiciona depois de entrar pelo meu link!</p>
-      <p class="cookie-note" style="margin-top:5px">🍪 <em>Cookie</em> é o tempo que o site lembra que você veio pelo meu link — enquanto não expirar, a compra conta pra mim!</p>
-    </div>
-    <div class="simples-badge">
-      <span>Simples<br>assim!</span>
-      <span class="badge-heart">♥</span>
     </div>
   </div>
 
@@ -503,7 +433,6 @@
         <div class="logo-circle logo-shopee">S</div>
         <div class="platform-info">
           <div class="pname">SHOPEE</div>
-          <div class="pcookie">Cookie: 7 dias</div>
         </div>
         <div class="dots-divider"></div>
         <a href="https://s.shopee.com.br/17Dg5UayK" target="_blank" rel="noopener" class="link-btn">CLIQUE PARA ACESSAR</a>
@@ -517,7 +446,6 @@
         <div class="logo-circle logo-ml">🤝</div>
         <div class="platform-info">
           <div class="pname">MERCADO LIVRE</div>
-          <div class="pcookie">Cookie: 1 dia</div>
         </div>
         <div class="dots-divider"></div>
         <a href="https://meli.la/1GJWKzV" target="_blank" rel="noopener" class="link-btn">CLIQUE PARA ACESSAR</a>
@@ -534,7 +462,6 @@
         </div>
         <div class="platform-info">
           <div class="pname">AMAZON BR</div>
-          <div class="pcookie">Cookie: 24 horas</div>
         </div>
         <div class="dots-divider"></div>
         <a href="https://amzn.to/4wzJbiP" target="_blank" rel="noopener" class="link-btn">CLIQUE PARA ACESSAR</a>
@@ -550,8 +477,7 @@
           <span class="amazon-arrow">──▸</span>
         </div>
         <div class="platform-info">
-          <div class="pname">AMAZON JP</div>
-          <div class="pcookie">Cookie: 24 horas</div>
+          <div class="pname">AMAZON JP 🇯🇵</div>
         </div>
         <div class="dots-divider"></div>
         <a href="https://amzn.to/4uTQW1y" target="_blank" rel="noopener" class="link-btn">CLIQUE PARA ACESSAR</a>
@@ -565,7 +491,6 @@
         <div class="logo-circle logo-iherb">iHerb</div>
         <div class="platform-info">
           <div class="pname">IHERB JP 🇯🇵</div>
-          <div class="pcookie">Cookie: 30 dias</div>
         </div>
         <div class="dots-divider"></div>
         <a href="https://iherb.co/7Ftpe73?rcode=NXX3693&utm_medium=appshare" target="_blank" rel="noopener" class="link-btn">CLIQUE PARA ACESSAR</a>
@@ -579,12 +504,11 @@
         <div class="logo-circle logo-magalu">M</div>
         <div class="platform-info">
           <div class="pname">MAGALU</div>
-          <div class="pcookie">Loja própria</div>
         </div>
         <div class="dots-divider"></div>
         <a href="https://www.magazinevoce.com.br/magazineruivagarimpeira/" target="_blank" rel="noopener" class="link-btn">CLIQUE PARA ACESSAR</a>
       </div>
-      <div class="row-deco">🛒</div>
+      <div class="row-deco">🏷️</div>
     </div>
 
     <!-- SHEIN NOTICE -->
@@ -593,8 +517,7 @@
       <div>
         <h3 class="shein-note-title">Shein funciona diferente!</h3>
         <p class="shein-note-text">
-          Na Shein o cookie <strong>não conta</strong> — ela só paga comissão quando eu converto o link de cada produto individualmente.
-        </p>
+          Estou fazendo alguns testes na Shein, então por enquanto: </p>
         <ul class="shein-steps">
           <li>🔍 Você achou algo na Shein que quer comprar</li>
           <li>📩 Me manda o link do produto pelo Instagram</li>
@@ -609,9 +532,7 @@
   </section>
 
   <footer class="footer">
-    <p class="footer-obrigada">Obrigada de coração pelo apoio! ♥</p>
-    <p class="footer-diferenca">Vocês fazem toda a diferença ♥</p>
-    <img src="../ruivagarimpeiraescrita-logo.png" alt="Ruiva Garimpeira" class="footer-logo-img">
+    <p class="footer-obrigada">obrigada pelo apoio ♡</p>
   </footer>
 
 </div>

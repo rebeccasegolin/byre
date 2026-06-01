@@ -5,367 +5,203 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="lupas.png" type="image/x-icon">
   <title>Ruiva Garimpeira</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
-      --bg:           #F7E9DF;
-      --terracotta:   #C56A45;
-      --salmon:       #E9A78A;
-      --peach:        #F4C9B4;
-      --taupe:        #DCC3B1;
-      --brown-mid:    #7A4A2F;
-      --brown-dark:   #4D2E1F;
-      --white:        #FFFFFF;
+      --terra:  #C56A45;
+      --rclaro: #F4C9B4;
+      --off:    #F7E9DF;
+      --bege:   #DCC3B1;
+      --marrom: #7A4A2F;
+      --choc:   #4D2E1F;
     }
 
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
     body {
-      background: var(--bg);
-      font-family: 'Poppins', 'Segoe UI', sans-serif;
-      color: var(--brown-dark);
+      background: var(--off);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      color: var(--choc);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .25;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+
     .page {
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 500px;
-      padding: 40px 18px 52px;
-    }
-
-    /* ══════════════════════════════════════════
-       HERO
-    ══════════════════════════════════════════ */
-    .hero {
+      max-width: 420px;
+      padding: 72px 20px 60px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
-      margin-bottom: 36px;
     }
 
-    .hero-img {
-      width: 170px;
-      height: 170px;
-      object-fit: contain;
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: clamp(2.8rem, 13vw, 3.6rem);
+      color: var(--choc);
+      line-height: 1.0;
       margin-bottom: 14px;
     }
 
-    .brand-ruiva {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      color: var(--brown-dark);
-      line-height: 1.0;
-      letter-spacing: -0.5px;
+    .tagline {
+      font-size: .68rem;
+      font-weight: 400;
+      color: var(--marrom);
+      opacity: .62;
+      letter-spacing: .06em;
     }
 
-    .brand-garimpeira {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2.9rem;
-      font-weight: 700;
-      color: var(--brown-mid);
-      line-height: 1.1;
-    }
-
-    .hero-tagline {
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--brown-mid);
-      margin-top: 10px;
-      letter-spacing: 0.5px;
-      opacity: 0.85;
-    }
-
-    /* ══════════════════════════════════════════
-       NAV CARDS
-    ══════════════════════════════════════════ */
-    .nav-cards {
+    /* ── NAV ── */
+    .nav-list {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 28px;
+      gap: 10px;
+      margin-bottom: 44px;
     }
 
     .nav-card {
       display: flex;
       align-items: center;
       gap: 14px;
-      background: var(--white);
-      border-radius: 18px;
-      padding: 16px 20px;
+      background: #fff;
+      border: 1px solid var(--rclaro);
+      border-radius: 16px;
+      padding: 14px 18px;
       text-decoration: none;
-      color: var(--brown-dark);
-      box-shadow: 0 2px 14px rgba(197, 106, 69, 0.10);
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      color: var(--choc);
+      transition: border-color .2s, transform .18s;
     }
 
-    .nav-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(197, 106, 69, 0.22);
-      background: linear-gradient(135deg, var(--white) 60%, var(--peach) 100%);
-    }
-
+    .nav-card:hover { border-color: var(--terra); transform: translateY(-2px); }
     .nav-card:active { transform: translateY(0); }
 
-    .card-icon {
-      font-size: 1.9rem;
-      width: 52px;
-      height: 52px;
-      min-width: 52px;
+    .nav-icon {
+      font-size: 1.35rem;
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--bg);
-      border-radius: 14px;
+      background: var(--off);
+      border-radius: 11px;
     }
 
-    .card-text { flex: 1; }
+    .nav-text { flex: 1; }
 
-    .card-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--brown-dark);
+    .nav-title {
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--choc);
       line-height: 1.3;
     }
 
-    .card-desc {
-      font-size: 0.64rem;
-      font-weight: 500;
-      color: var(--brown-mid);
-      margin-top: 3px;
-      line-height: 1.5;
+    .nav-desc {
+      font-size: .61rem;
+      color: var(--marrom);
+      margin-top: 2px;
+      opacity: .7;
+      line-height: 1.4;
     }
 
-    .card-arrow {
-      font-size: 1.3rem;
-      color: var(--terracotta);
-      font-weight: 700;
-      line-height: 1;
+    .nav-arrow {
+      font-size: .95rem;
+      color: var(--terra);
+      opacity: .5;
     }
 
-    /* ══════════════════════════════════════════
-       SOCIAL SECTION
-    ══════════════════════════════════════════ */
-    .social-title {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.55rem;
-      font-weight: 700;
-      color: var(--brown-mid);
-      text-align: center;
-      margin-bottom: 14px;
-    }
-
-    .social-cards {
+    /* ── SOCIAL ICONS ── */
+    .social-icons {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .social-card {
-      display: flex;
-      align-items: center;
       gap: 14px;
-      background: var(--white);
-      border-radius: 18px;
-      padding: 14px 20px;
-      text-decoration: none;
-      color: var(--brown-dark);
-      box-shadow: 0 2px 14px rgba(197, 106, 69, 0.10);
-      transition: transform 0.2s, box-shadow 0.2s;
+      align-items: center;
     }
 
-    .social-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(197, 106, 69, 0.22);
-    }
-
-    .social-card:active { transform: translateY(0); }
-
-    .social-icon {
+    .icon-btn {
       width: 48px;
       height: 48px;
-      min-width: 48px;
-      border-radius: 14px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      opacity: .78;
+      transition: transform .2s, opacity .2s;
+      text-decoration: none;
     }
 
-    .social-icon-ig {
+    .icon-btn:hover { transform: scale(1.1); opacity: 1; }
+
+    .icon-btn svg { width: 22px; height: 22px; fill: #fff; }
+
+    .icon-ig {
       background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
 
-    .social-icon-tt { background: #010101; }
-
-    .social-icon svg {
-      width: 22px;
-      height: 22px;
-      fill: #fff;
-    }
-
-    .social-text { flex: 1; }
-
-    .social-name {
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      color: var(--brown-dark);
-    }
-
-    .social-handle {
-      font-size: 0.62rem;
-      font-weight: 500;
-      color: var(--brown-mid);
-      margin-top: 2px;
-    }
-
-    /* ══════════════════════════════════════════
-       FOOTER
-    ══════════════════════════════════════════ */
-    .footer {
-      text-align: center;
-      padding-top: 32px;
-    }
-
-    .footer-logo-img {
-      width: 190px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      border-radius: 20px;
-    }
-
-    /* ── Sparkles ───────── */
-    .sparkles-bg {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .sp {
-      position: absolute;
-      color: var(--salmon);
-      user-select: none;
-      line-height: 1;
-    }
-
-    /* ══════════════════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════════════════ */
-    @media (max-width: 380px) {
-      .brand-ruiva { font-size: 2.1rem; }
-      .brand-garimpeira { font-size: 2.5rem; }
-      .hero-img { width: 140px; height: 140px; }
-    }
+    .icon-tt { background: #010101; }
   </style>
 </head>
 <body>
 
-<div class="sparkles-bg" aria-hidden="true">
-  <span class="sp" style="top:3%;left:7%;font-size:0.75rem;opacity:.55">✦</span>
-  <span class="sp" style="top:2%;left:80%;font-size:0.55rem;opacity:.5">✧</span>
-  <span class="sp" style="top:8%;left:93%;font-size:0.65rem;opacity:.4">✦</span>
-  <span class="sp" style="top:14%;left:2%;font-size:0.5rem;opacity:.45">✧</span>
-  <span class="sp" style="top:21%;left:88%;font-size:0.7rem;opacity:.5">✦</span>
-  <span class="sp" style="top:27%;left:4%;font-size:0.6rem;opacity:.4">✦</span>
-  <span class="sp" style="top:35%;left:92%;font-size:0.5rem;opacity:.45">✧</span>
-  <span class="sp" style="top:43%;left:2%;font-size:0.7rem;opacity:.5">✦</span>
-  <span class="sp" style="top:50%;left:90%;font-size:0.6rem;opacity:.4">✦</span>
-  <span class="sp" style="top:57%;left:6%;font-size:0.55rem;opacity:.5">✧</span>
-  <span class="sp" style="top:65%;left:94%;font-size:0.75rem;opacity:.45">✦</span>
-  <span class="sp" style="top:72%;left:3%;font-size:0.5rem;opacity:.4">✦</span>
-  <span class="sp" style="top:80%;left:86%;font-size:0.65rem;opacity:.5">✧</span>
-  <span class="sp" style="top:88%;left:5%;font-size:0.7rem;opacity:.45">✦</span>
-  <span class="sp" style="top:95%;left:78%;font-size:0.55rem;opacity:.4">✦</span>
-</div>
-
 <div class="page">
 
-  <!-- ══════════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════ -->
   <header class="hero">
-    <img src="ruivagarimpeirainicial.png" alt="Ruiva Garimpeira" class="hero-img">
+    <p class="tagline">achados que valem cada real ♡</p>
   </header>
 
-  <!-- ══════════════════════════════════════════
-       NAVEGAÇÃO
-  ══════════════════════════════════════════ -->
-  <div class="nav-cards">
-
+  <nav class="nav-list">
     <a href="vitrine/" class="nav-card">
-      <div class="card-icon">🔍</div>
-      <div class="card-text">
-        <div class="card-title">Todos os produtos</div>
-        <div class="card-desc">Meus achados favoritos garimpados pra você</div>
+      <div class="nav-icon">🔍</div>
+      <div class="nav-text">
+        <div class="nav-title">Todos os produtos</div>
+        <div class="nav-desc">Meus achados favoritos garimpados pra você</div>
       </div>
-      <span class="card-arrow">›</span>
+      <span class="nav-arrow">→</span>
     </a>
-
     <a href="afiliados/" class="nav-card">
-      <div class="card-icon">🛍️</div>
-      <div class="card-text">
-        <div class="card-title">Links de Afiliada</div>
-        <div class="card-desc">Compre o que quiser e me apoie sem gastar nada a mais ♥</div>
+      <div class="nav-icon">🛍️</div>
+      <div class="nav-text">
+        <div class="nav-title">Links de Afiliada</div>
+        <div class="nav-desc">Compre e me apoie sem gastar nada a mais ♥</div>
       </div>
-      <span class="card-arrow">›</span>
+      <span class="nav-arrow">→</span>
     </a>
+  </nav>
 
+  <div class="social-icons">
+    <a href="https://www.instagram.com/ruivagarimpeira" target="_blank" rel="noopener"
+       class="icon-btn icon-ig" aria-label="Instagram @ruivagarimpeira">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@ruivagarimpeiraofc" target="_blank" rel="noopener"
+       class="icon-btn icon-tt" aria-label="TikTok @ruivagarimpeiraofc">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+    </a>
   </div>
-
-  <!-- ══════════════════════════════════════════
-       REDES SOCIAIS
-  ══════════════════════════════════════════ -->
-  <p class="social-title">Me encontre nas redes ♥</p>
-
-  <div class="social-cards">
-
-    <a href="https://www.instagram.com/ruivagarimpeira" target="_blank" rel="noopener" class="social-card">
-      <div class="social-icon social-icon-ig">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </div>
-      <div class="social-text">
-        <div class="social-name">Instagram</div>
-        <div class="social-handle">@ruivagarimpeira</div>
-      </div>
-      <span class="card-arrow">›</span>
-    </a>
-
-    <a href="https://www.tiktok.com/@ruivagarimpeiraofc" target="_blank" rel="noopener" class="social-card">
-      <div class="social-icon social-icon-tt">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
-      </div>
-      <div class="social-text">
-        <div class="social-name">TikTok</div>
-        <div class="social-handle">@ruivagarimpeiraofc</div>
-      </div>
-      <span class="card-arrow">›</span>
-    </a>
-
-  </div>
-
-  <!-- ══════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════ -->
-  <footer class="footer">
-    <img src="ruivagarimpeiraescrita-logo.png" alt="Ruiva Garimpeira" class="footer-logo-img">
-  </footer>
 
 </div>
 </body>
