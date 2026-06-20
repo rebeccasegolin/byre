@@ -126,6 +126,22 @@
       opacity: .5;
     }
 
+    .nav-card.secondary {
+      padding: 10px 14px;
+      opacity: .72;
+    }
+
+    .nav-card.secondary .nav-icon {
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
+      font-size: 1.05rem;
+      border-radius: 9px;
+    }
+
+    .nav-card.secondary .nav-title { font-size: .7rem; }
+    .nav-card.secondary .nav-desc  { font-size: .57rem; }
+
     /* ── SOCIAL ICONS ── */
     .social-icons {
       display: flex;
@@ -165,19 +181,19 @@
   </header>
 
   <nav class="nav-list">
-    <a href="https://byre.lovable.app/" target="_blank" rel="noopener" class="nav-card">
-      <div class="nav-icon">🎁</div>
-      <div class="nav-text">
-        <div class="nav-title">Grupo de Ofertas</div>
-        <div class="nav-desc">as melhores promoções em primeira mão</div>
-      </div>
-      <span class="nav-arrow">→</span>
-    </a>
     <a href="afiliados/" class="nav-card">
       <div class="nav-icon">🛍️</div>
       <div class="nav-text">
         <div class="nav-title">Links de Afiliada</div>
         <div class="nav-desc">compre e me apoie sem gastar nada a mais ♥</div>
+      </div>
+      <span class="nav-arrow">→</span>
+    </a>
+    <a href="https://byre.lovable.app/" target="_blank" rel="noopener" class="nav-card secondary">
+      <div class="nav-icon">🎁</div>
+      <div class="nav-text">
+        <div class="nav-title">Grupo de Ofertas</div>
+        <div class="nav-desc">as melhores promoções em primeira mão</div>
       </div>
       <span class="nav-arrow">→</span>
     </a>
