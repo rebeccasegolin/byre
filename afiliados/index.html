@@ -139,6 +139,50 @@
     .logo-iherb   { background: #3D7A18; color: #fff; font-size: 0.72rem; font-weight: 900; font-family: 'Poppins', sans-serif; letter-spacing: -0.5px; }
     .logo-magalu  { background: #005A8E; color: #fff; font-size: 1.6rem; font-family: 'Poppins', sans-serif; font-weight: 900; }
     .logo-temu    { background: #B54418; color: #fff; font-size: 1.5rem; font-family: 'Poppins', sans-serif; }
+    .logo-ali     { background: #C42020; color: #fff; font-size: 1.5rem; font-family: 'Poppins', sans-serif; }
+
+    .pname-wrap { display: flex; align-items: center; gap: 5px; }
+
+    .info-btn {
+      width: 15px; height: 15px; border-radius: 50%;
+      background: var(--taupe); border: none; color: var(--brown-dark);
+      font-size: 0.52rem; font-weight: 700; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; opacity: 0.65; transition: opacity .2s, background .2s;
+      padding: 0; line-height: 1;
+    }
+    .info-btn:hover { opacity: 1; background: var(--salmon); }
+
+    /* ── Countries dialog ── */
+    dialog.countries-dialog {
+      border: none; border-radius: 18px; padding: 20px 18px;
+      max-width: 290px; width: calc(100% - 48px);
+      background: #fff;
+    }
+
+    dialog.countries-dialog::backdrop {
+      background: rgba(77,46,31,.38);
+      backdrop-filter: blur(3px);
+    }
+
+    .countries-title {
+      font-family: 'DM Serif Display', serif; font-style: italic;
+      font-size: 1rem; color: var(--brown-dark); margin-bottom: 10px;
+    }
+
+    .countries-list {
+      list-style: none; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4px 10px; margin-bottom: 12px;
+    }
+
+    .countries-list li { font-size: 0.66rem; color: var(--brown-mid); line-height: 1.45; }
+
+    .countries-note {
+      font-size: 0.61rem; color: var(--brown-mid); opacity: .8;
+      border-top: 1px solid var(--peach); padding-top: 10px;
+    }
+
+    .countries-note a { color: var(--terracotta); text-decoration: none; }
 
     .amazon-a     { color: #fff; font-family: 'Times New Roman', serif; font-size: 1.25rem; font-style: italic; line-height: 1; }
     .amazon-arrow { color: #FF9900; font-size: 0.62rem; line-height: 1; }
@@ -525,6 +569,22 @@
       <div class="row-deco">🌐</div>
     </div>
 
+    <!-- ALIEXPRESS -->
+    <div class="link-row">
+      <div class="link-card">
+        <div class="logo-circle logo-ali">A</div>
+        <div class="platform-info">
+          <div class="pname-wrap">
+            <div class="pname">ALIEXPRESS</div>
+            <button class="info-btn" onclick="openCountries()" aria-label="países disponíveis">?</button>
+          </div>
+        </div>
+        <div class="dots-divider"></div>
+        <a href="https://s.click.aliexpress.com/e/_c44uNMoV" target="_blank" rel="noopener" class="link-btn">CLIQUE PARA ACESSAR</a>
+      </div>
+      <div class="row-deco">🌐</div>
+    </div>
+
     <!-- SHEIN BR -->
     <div class="link-row">
       <div class="link-card">
@@ -551,23 +611,6 @@
       <div class="row-deco">🇯🇵</div>
     </div>
 
-    <!-- SHEIN NOTICE -->
-    <div class="shein-note">
-      <div class="shein-note-icon">🌸</div>
-      <div>
-        <h3 class="shein-note-title">Shein funciona diferente!</h3>
-        <p class="shein-note-text">
-          Estou fazendo alguns testes na Shein, então por enquanto: </p>
-        <ul class="shein-steps">
-          <li>🔍 Você achou algo na Shein que quer comprar</li>
-          <li>📩 Me manda o link do produto pelo Instagram</li>
-          <li>🔗 Eu te envio de volta com o meu link convertido</li>
-          <li>🛍️ Você compra pelo meu link e me apoia — sem pagar nada a mais!</li>
-        </ul>
-        <a href="https://www.instagram.com/rebeccasegolin" target="_blank" rel="noopener" class="shein-cta">✉ Me envia no Instagram</a>
-      </div>
-    </div>
-
 
   </section>
 
@@ -575,6 +618,34 @@
     <p class="footer-obrigada">obrigada pelo apoio ♡</p>
   </footer>
 
+  <!-- countries popup -->
+  <dialog class="countries-dialog" id="ali-countries" aria-label="Países disponíveis">
+    <p class="countries-title">Países disponíveis</p>
+    <ul class="countries-list">
+      <li>🇧🇷 Brasil</li>
+      <li>🇺🇸 EUA</li>
+      <li>🇲🇽 México</li>
+      <li>🇻🇪 Venezuela</li>
+      <li>🇯🇵 Japão</li>
+      <li>🇮🇹 Itália</li>
+      <li>🇫🇷 França</li>
+      <li>🇨🇴 Colômbia</li>
+      <li>🇨🇭 Suíça</li>
+      <li>🇵🇹 Portugal</li>
+    </ul>
+    <p class="countries-note">Outro país? <a href="https://www.instagram.com/rebeccasegolin" target="_blank" rel="noopener">Me envia no Instagram ↗</a></p>
+  </dialog>
+
 </div>
+<script>
+  const aliDialog = document.getElementById('ali-countries');
+  function openCountries() { aliDialog.showModal(); }
+  aliDialog.addEventListener('click', function(e) {
+    const r = aliDialog.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) {
+      aliDialog.close();
+    }
+  });
+</script>
 </body>
 </html>
