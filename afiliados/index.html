@@ -140,7 +140,18 @@
     .logo-magalu  { background: #005A8E; color: #fff; font-size: 1.6rem; font-family: 'Poppins', sans-serif; font-weight: 900; }
     .logo-temu    { background: #B54418; color: #fff; font-size: 1.5rem; font-family: 'Poppins', sans-serif; }
     .logo-ali     { background: #C42020; color: #fff; font-size: 1.5rem; font-family: 'Poppins', sans-serif; }
-    .logo-rakuten { background: #BF0000; color: #fff; font-size: 0.7rem; font-weight: 900; font-family: 'Poppins', sans-serif; letter-spacing: -0.3px; }
+    .logo-rakuten  { background: #BF0000; color: #fff; font-size: 0.7rem; font-weight: 900; font-family: 'Poppins', sans-serif; letter-spacing: -0.3px; }
+    .logo-alibaba  { background: #B34700; color: #fff; font-size: 0.68rem; font-weight: 900; font-family: 'Poppins', sans-serif; letter-spacing: -0.3px; }
+
+    .link-row.pending { opacity: 0.42; pointer-events: none; }
+    .link-btn-soon {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      min-height: 40px; padding: 8px 6px;
+      border: 1.5px dashed var(--taupe); border-radius: 10px;
+      font-family: 'Poppins', sans-serif; font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.9px; text-transform: uppercase; color: var(--taupe);
+      text-align: center;
+    }
 
     .pname-wrap { display: flex; align-items: center; gap: 5px; }
 
@@ -621,6 +632,16 @@
       <div class="row-deco">🌐</div>
     </div>
 
+    <!-- ALIBABA GLOBAL aguardando aprovação -->
+    <div class="link-row pending">
+      <div class="link-card">
+        <div class="logo-circle logo-alibaba">Ali</div>
+        <div class="platform-info"><div class="pname">ALIBABA</div></div>
+        <div class="dots-divider"></div>
+        <span class="link-btn-soon">EM BREVE</span>
+      </div>
+      <div class="row-deco">🌐</div>
+    </div>
 
   </section>
 
